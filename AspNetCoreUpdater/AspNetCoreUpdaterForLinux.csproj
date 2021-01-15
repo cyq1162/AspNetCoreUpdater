@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>AspNetCoreUpdater</AssemblyName>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Version>1.2.0</Version>
+    <Description>AspNetCore 版本热更新工具 For Linux Nginx，开源：https://github.com/cyq1162</Description>
+    <Company>路过秋天 （2021-01-15）开源：https://github.com/cyq1162</Company>
+    <Product>AspNetCore 版本热更新工具 For Linux Nginx</Product>
+    <Authors>路过秋天 （2021-01-15）开源：https://github.com/cyq1162</Authors>
+    <Copyright>版权所有 (C) 路过秋天 2010-2110</Copyright>
+    <AssemblyTitle>AspNetCore 版本热更新工具 For Linux Nginx</AssemblyTitle>
+    <PackageProjectUrl>https://github.com/cyq1162</PackageProjectUrl>
+    <ApplicationIcon>dll\Logo.ico</ApplicationIcon>
+    <RootNamespace>AspNetCoreUpdater</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="dll\**" />
+    <EmbeddedResource Remove="dll\**" />
+    <None Remove="dll\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ProgramForWindow.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="Properties\Resources.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Properties\Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="app.config" />
+    <None Remove="AspNetCoreUpdater.ini" />
+    <None Remove="AspNetCoreUpdaterForLinux.ini" />
+    <None Remove="AspNetCoreUpdaterForWindow.ini" />
+    <None Remove="my.conf" />
+    <None Remove="Properties\app.manifest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AspNetCoreUpdaterForLinux.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="my.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
